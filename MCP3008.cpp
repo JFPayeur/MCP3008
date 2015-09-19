@@ -23,7 +23,8 @@ MCP3008::MCP3008(int clockpin, int mosipin, int misopin, int cspin) {
     pinMode(_clockpin, OUTPUT);
     pinMode(_mosipin, OUTPUT);
     pinMode(_misopin, INPUT);
-    
+
+    digitalWrite(_cspin, HIGH); //     # bring CS low   , preferable to do in init if adressing multiples chips     
 }
 
 // read SPI data from MCP3008 chip, 8 possible adc's (0 thru 7)
